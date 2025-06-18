@@ -1,14 +1,28 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
+use std::path::Path;
+
+struct EphemeralDir {
+    // TODO: should we use a Box<Path> here instead of PathBuf?
+    path: PathBuf,
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
+impl EphemeralDir {
+    pub fn new(path: impl AsRef<Path>) -> Self {
+        todo!()
     }
+}
+
+impl Drop for EphemeralDir {
+    fn drop(&mut self) {
+        todo!()
+    }
+}
+
+#[test]
+fn test_dir_exists_after_creation() {
+    todo!()
+}
+
+#[test]
+fn test_dir_does_not_exist_after_going_out_of_scope() {
+    todo!()
 }
