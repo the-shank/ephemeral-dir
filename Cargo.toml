@@ -1,9 +1,10 @@
 [package]
 name = "ephemeral-dir"
-version = "0.0.2"
+version = "0.0.3"
 edition = "2024"
 license = "MIT OR Apache-2.0"
 description = "A library for creating temporary directories that are auto-cleaned."
+repository = "https://gitlab.com/shank/ephemeral-dir"
 
 [dependencies]
 eyre = "0.6.12"
