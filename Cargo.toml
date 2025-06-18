@@ -6,3 +6,4 @@ license = "MIT OR Apache-2.0"
 description = "A library for creating temporary directories that are auto-cleaned."
 
 [dependencies]
+eyre = "0.6.12"
