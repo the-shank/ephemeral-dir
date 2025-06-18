@@ -1,4 +1,4 @@
-use std::path::Path;
+use std::path::{Path, PathBuf};
 
 struct EphemeralDir {
     // TODO: should we use a Box<Path> here instead of PathBuf?
