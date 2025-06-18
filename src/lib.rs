@@ -34,7 +34,7 @@ impl EphemeralDir {
 
 impl Drop for EphemeralDir {
     fn drop(&mut self) {
-        todo!()
+        let _ = fs::remove_dir_all(self.path());
     }
 }
 
@@ -47,10 +47,21 @@ fn test_dir_exists_after_creation() {
     assert!(dir.path().exists());
     let dir_path_str = format!("{}", dir.path().display());
     assert_eq!(dir_path_str, path);
-    todo!()
 }
 
 #[test]
 fn test_dir_does_not_exist_after_going_out_of_scope() {
-    todo!()
+    let path = "/tmp/ephemeral_dir_test";
+    let res_dir = EphemeralDir::new_forced(path);
+    assert!(res_dir.is_ok());
+    {
+        let Ok(dir) = res_dir else { unreachable!() };
+        assert!(dir.path().exists());
+        let dir_path_str = format!("{}", dir.path().display());
+        assert_eq!(dir_path_str, path);
+        let dir_path = Path::new(&dir_path_str);
+        assert!(dir_path.exists());
+    }
+    let path_path = Path::new(path);
+    assert!(!path_path.exists());
 }
