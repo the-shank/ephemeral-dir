@@ -14,7 +14,7 @@ Use `EphemeralDir::new(<path>)` to create an ephemeral dir -- this would panic i
 
 Use `EphemeralDir::new_forced(<path>)` to create an ephemeral dir, deleting the existing directory at `<path>`.
 
-```
+```rust
 use ephemeral_dir::EphemeralDir;
 use std::path::Path;
 
