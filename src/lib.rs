@@ -9,6 +9,7 @@ pub fn ephemeral_dir_forced(path: impl AsRef<Path>) -> eyre::Result<EphemeralDir
     EphemeralDir::new_forced(path)
 }
 
+#[derive(Debug)]
 pub struct EphemeralDir {
     // TODO: should we use a Box<Path> here instead of PathBuf?
     path: PathBuf,
